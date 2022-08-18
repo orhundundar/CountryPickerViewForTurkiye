@@ -19,6 +19,9 @@ public struct Country: Equatable {
     public let code: String
     public let phoneCode: String
     public func localizedName(_ locale: Locale = Locale.current) -> String? {
+        if code == "TR" || code == "tr" {
+            return "Türkiye"
+        }
         return locale.localizedString(forRegionCode: code)
     }
     public var flag: UIImage {
